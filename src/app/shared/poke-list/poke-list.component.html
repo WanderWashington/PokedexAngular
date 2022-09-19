@@ -1,5 +1,9 @@
+
+<poke-search (emitSearch)="searchValues($event)"></poke-search>
+<section class="listagem"> 
+    
 <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-    <a class="pokemon" *ngIf="pokemon.status">
+    <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status">
         <section class="pokemon__status">
             <h2>
                 {{pokemon.name}} #{{pokemon.status.id}}
@@ -17,3 +21,4 @@
     </a>
 </ng-template>
 
+</section>
